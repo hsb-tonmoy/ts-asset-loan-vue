@@ -1,11 +1,10 @@
-<script setup lang="ts">
-const route = useRoute();
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div>
-    <h1>Nuxt Routing set up successfully!</h1>
-    <p>Current route: {{ route.path }}</p>
-    <NuxtLink to="/assets">Assets</NuxtLink>
+  <div class="w-full px-6 py-6 mx-auto">
+    <HomeCards />
+    <div class="mt-4">
+      <HomeLoanForm />
+    </div>
   </div>
 </template>

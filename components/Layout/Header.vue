@@ -1,25 +1,13 @@
 <script setup lang="ts">
-import Dashboard from "~/assets/icons/dashboard.svg";
-import MaterialSymbolsMenuOpen from "~icons/material-symbols/menu-open";
-import MaterialSymbolsMenu from "~icons/material-symbols/menu";
-import MaterialSymbolsSearch from "~icons/material-symbols/search";
-import MaterialSymbolsPerson from "~icons/material-symbols/person";
-import MaterialSymbolsSettings from "~icons/material-symbols/settings";
-import MaterialSymbolsNotifications from "~icons/material-symbols/notifications";
-
 const notificationArea = ref(false);
 const settingsArea = ref(false);
 
-defineProps({ sidebarToggle: Boolean });
-defineEmits(["sidebarToggle"]);
+const props = defineProps({ sidebarToggle: Boolean });
+const emits = defineEmits(["update:sidebarToggle"]);
 
-function closeNotificationArea() {
-  notificationArea = false;
-}
-
-function closeProfileArea() {
-  profileArea = false;
-}
+const toggleSidebar = () => {
+  emits("update:sidebarToggle", !props.sidebarToggle);
+};
 </script>
 
 <template>
@@ -36,7 +24,9 @@ function closeProfileArea() {
           class="flex flex-wrap items-center pt-1 mr-6 bg-transparent rounded-lg sm:mr-10"
         >
           <li class="leading-normal text-sm mb-1">
-            <a class="opacity-30 text-slate-700" href="/"><Dashboard /></a>
+            <a class="opacity-30 text-slate-700" href="/"
+              ><Icon name="IconsDashboard"
+            /></a>
           </li>
           <li
             class="text-sm pl-2 capitalize leading-normal text-slate-700 before:float-left before:pr-2 before:text-gray-600 before:content-['/']"
@@ -63,7 +53,7 @@ function closeProfileArea() {
             <span
               class="text-sm ease-soft leading-5.6 absolute z-50 -ml-px flex h-full items-center whitespace-nowrap rounded-lg rounded-tr-none rounded-br-none border border-r-0 border-transparent bg-transparent py-2 px-2.5 text-center font-normal text-slate-500 transition-all"
             >
-              <MaterialSymbolsSearch />
+              <Icon name="material-symbols:search" />
             </span>
             <input
               type="text"
@@ -78,7 +68,7 @@ function closeProfileArea() {
               href="/auth/login"
               class="block px-0 xl:py-2 font-semibold transition-all ease-nav-brand text-sm text-slate-500"
             >
-              <MaterialSymbolsPerson />
+              <Icon name="material-symbols:person" />
               <span class="hidden sm:inline">Sign In</span>
             </a>
           </li>
@@ -88,13 +78,13 @@ function closeProfileArea() {
               class="block p-0 transition-all ease-nav-brand text-sm text-slate-500"
             >
               <div class="w-4.5 overflow-hidden">
-                <button @click="$emit('sidebarToggle')">
+                <button @click="toggleSidebar">
                   <div v-if="sidebarToggle">
-                    <MaterialSymbolsMenuOpen style="font-size: 1.3rem" />
+                    <Icon name="material-symbols:menu-open" />
                   </div>
 
                   <div v-else>
-                    <MaterialSymbolsMenu style="font-size: 1.3rem" />
+                    <Icon name="material-symbols:menu" />
                   </div>
                 </button>
               </div>
@@ -105,7 +95,7 @@ function closeProfileArea() {
               href="javascript:;"
               class="p-0 transition-all text-sm ease-nav-brand text-slate-500"
             >
-              <MaterialSymbolsSettings />
+              <Icon name="material-symbols:settings" />
             </a>
           </li>
 
@@ -118,7 +108,7 @@ function closeProfileArea() {
               @click="notificationArea = !notificationArea"
               class="block p-0 transition-all text-sm ease-nav-brand text-slate-500"
             >
-              <MaterialSymbolsNotifications />
+              <Icon name="material-symbols:notifications" />
             </button>
 
             <ul

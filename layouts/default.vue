@@ -30,7 +30,7 @@
         @click="sidebarToggle = false"
         class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 right-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white"
       >
-        <MaterialSymbolsCancel />
+        <Icon name="material-symbols:cancel" />
       </button>
       <LayoutSideBar />
     </aside>
@@ -41,10 +41,7 @@
       class="ease-soft-in-out xl:ml-68.5 py-6 relative h-full max-h-screen rounded-xl transition-all duration-200"
     >
       <!-- Navbar -->
-      <LayoutHeader
-        v-model="sidebarToggle"
-        @sidebarToggle="sidebarToggle = !sidebarToggle"
-      />
+      <LayoutHeader v-model:sidebarToggle="sidebarToggle" />
       <!-- end Navbar -->
 
       <!-- cards -->
@@ -54,9 +51,7 @@
   </div>
 </template>
 
-<script lang="ts">
-import MaterialSymbolsCancel from "~icons/material-symbols/cancel";
-
+<script setup lang="ts">
 const darkMode = ref(false);
 const stickyMenu = ref(false);
 const sidebarToggle = ref(false);

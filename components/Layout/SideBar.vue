@@ -33,14 +33,14 @@
         :key="menuItem.name"
         class="mt-0.5 w-full"
       >
-        <a
+        <NuxtLink
           :class="[
             'py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors',
             currentPage === menuItem.link
               ? 'shadow-soft-xl bg-white text-slate-700 font-semibold'
               : '',
           ]"
-          :href="menuItem.link"
+          :to="menuItem.link"
         >
           <div
             :class="[
@@ -50,14 +50,13 @@
                 : 'text-slate-800',
             ]"
           >
-            <!-- Icon rendering using SVG files or icon library -->
             <Icon :name="menuItem.icon" />
           </div>
           <span
             class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft"
             >{{ menuItem.name }}</span
           >
-        </a>
+        </NuxtLink>
       </li>
     </ul>
   </div>
@@ -67,12 +66,12 @@
 const menuItems = ref([
   {
     name: "Dashboard",
-    icon: "dashboard", // icon name or SVG file path
+    icon: "IconsDashboard",
     link: "/",
   },
   {
     name: "Assets",
-    icon: "devices", // icon name or SVG file path
+    icon: "material-symbols:devices-other",
     link: "/assets",
   },
 ]);
