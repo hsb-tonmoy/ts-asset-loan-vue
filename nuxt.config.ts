@@ -18,5 +18,5 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxtjs/tailwindcss", "nuxt-icon", "nuxt-svgo"],
+  modules: ["@nuxtjs/tailwindcss", "nuxt-icon", "nuxt-svgo", "@vueform/nuxt"],
 });

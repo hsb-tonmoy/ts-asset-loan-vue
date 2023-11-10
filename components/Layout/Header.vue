@@ -25,7 +25,7 @@ const toggleSidebar = () => {
         >
           <li class="leading-normal text-sm mb-1">
             <a class="opacity-30 text-slate-700" href="/"
-              ><Icon name="IconsDashboard"
+              ><Icon name="IconsDashboard" size="0.75rem"
             /></a>
           </li>
           <li

@@ -772,15 +772,6 @@ module.exports = {
       0: "0",
       DEFAULT: "1",
     },
-    fontFamily: {
-      sans: ["Open Sans"],
-      serif: [
-        'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
-        "serif",
-      ],
-      body: ["Roboto", "sans-serif"],
-      awesome: ["FontAwesome"],
-    },
     fontSize: ({ theme }) => ({
       ...theme("spacing"),
       inherit: "inherit",
@@ -1393,6 +1384,17 @@ module.exports = {
       110: "110",
       990: "990",
       sticky: "1020",
+    },
+  },
+  extend: {
+    fontFamily: {
+      sans: ["Open Sans"],
+      serif: [
+        'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+        "serif",
+      ],
+      body: ["Roboto", "sans-serif"],
+      awesome: ["FontAwesome"],
     },
   },
   variants: {
