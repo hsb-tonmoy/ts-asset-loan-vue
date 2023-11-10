@@ -1,12 +1,11 @@
 // vueform.config.js
 
 import en from "@vueform/vueform/locales/en";
-import vueform from "@vueform/vueform/themes/vueform";
-
-import "@vueform/vueform/themes/vueform/css/index.min.css";
+import material from "@vueform/vueform/themes/material";
 
 export default {
-  theme: vueform,
+  theme: material,
   locales: { en },
   locale: "en",
+  classHelpers: true,
 };

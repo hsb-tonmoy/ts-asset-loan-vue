@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-wrap -mx-3">
-    <HomeCardItem
+    <AdminCardItem
       v-for="card in cards"
       :key="card.name"
       :title="card.name"

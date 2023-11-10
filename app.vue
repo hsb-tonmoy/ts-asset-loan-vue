@@ -15,3 +15,7 @@ useHead({
   ],
 });
 </script>
+
+<style>
+@import "node_modules/@vueform/vueform/themes/material/css/index.min.css";
+</style>
